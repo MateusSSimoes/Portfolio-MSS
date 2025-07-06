@@ -1,0 +1,147 @@
+/* Reset e estilo base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #34093f, #0d0113); /* gradiente escuro */
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.avatar {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover; /* <-- ESSENCIAL */
+  border: 2px solid #8257e5;
+  margin-bottom: 1rem;
+}
+
+
+.profile h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile p {
+  color: #a8a8b3;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.links {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link {
+  display: block;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(130, 87, 229, 0.5); /* roxo translúcido */
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.03); /* fundo sutil */
+  backdrop-filter: blur(2px); /* leve desfoque de fundo */
+  transition: all 0.3s ease;
+}
+
+
+.link:hover {
+  background-color: rgba(130, 87, 229, 0.2); /* roxinho claro */
+  border-color: #8257e5;
+  color: #fff;
+}
+
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.social a {
+  color: #a8a8b3;
+  transition: color 0.3s;
+}
+
+.social a:hover {
+  color: #fff;
+}
+
+/* -------- MODO CLARO --------- */
+body.light-mode {
+  background: linear-gradient(180deg, #f1e8ff, #5a2dff); /* gradiente claro */
+  color: #222;
+}
+
+body.light-mode .avatar {
+  border-color: #5a2dff;
+}
+
+body.light-mode .profile p {
+  color: #555;
+}
+
+body.light-mode .link {
+  color: #222;
+  border-color: rgba(130, 87, 229, 0.4);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+body.light-mode .link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+
+body.light-mode .social a {
+  color: #555;
+}
+
+body.light-mode .social a:hover {
+  color: #222;
+}
+
+/* -------- BOTÃO TOGGLE --------- */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #8257e5;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+  z-index: 1000;
+}
+
+#theme-toggle:hover {
+  color: #5a2dff;
+}
+
+#theme-toggle:focus {
+  outline: 2px solid #5a2dff;
+  outline-offset: 2px;
+}
